@@ -15,3 +15,6 @@ export type Optionvalue = {
     removeItem: (element: string) => void;
   };
   
+  export type TLabel ={
+    active:boolean
+}

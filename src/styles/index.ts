@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import {TLabel} from '../utils/types'
 export const Dropdown = styled.div`
   margin: 0 auto;
   z-index: 10000;
@@ -61,6 +61,7 @@ export const CategoryTitleWrapper = styled.div`
   border-bottom: 2px solid #eee;
 `;
 
-export const Label = styled.span`
-color:'red';
+
+export const Label = styled.span<TLabel>`
+text-decoration:${props => props.active ? `line-through`  :`none`}
 `;

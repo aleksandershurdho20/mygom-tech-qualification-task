@@ -6,7 +6,7 @@ import { useArrayData } from "./utils/hooks/useArrayData";
 const App = () => {
   const [open, setOpen] = useState<boolean>(false);
   const handleOpenDropdown = () => setOpen(!open);
-  const [dropdownValues,,handleSelectItem,removeItem] = useArrayData([""]);
+  const [dropdownValues,,handleSelectItem,removeItem] = useArrayData([]);
   return (
     <div>
      <Dropdown

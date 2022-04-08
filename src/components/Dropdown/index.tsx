@@ -10,7 +10,6 @@ import {
   } from "../../styles";
   import type { TOptionProps, Optionvalue,OptionsData } from "../../utils/types";
   import { XIcon } from '@heroicons/react/solid'
-
     export  const Dropdown: FC<TOptionProps> = ({
         options,
         onSelectItem,
@@ -22,12 +21,12 @@ import {
         return (
           <DD>
             <DropdownBtn onClick={handleOpenDropdown}>
-              {value.map((el: string) => (
+              {value.length > 0 ?value.map((el: string) => (
                 <LabelWrapper>
                   <span>{el}</span>
                   <XIcon className='icon' onClick={() => removeItem(el)} />
                 </LabelWrapper>
-              ))}
+              )) : <span>Please Select!</span>}
               {isOpened && (
                 <DropdownContent>
                   {options.map((item: OptionsData) => (
@@ -37,7 +36,7 @@ import {
                       </CategoryTitleWrapper>
                       {item.childrens.map((el: Optionvalue) => (
                         <Item onClick={() => onSelectItem(el)}>
-                          <Label>{el.title}</Label>
+                          <Label active={value.includes(el.title)}>{el.title}</Label>
                         </Item>
                       ))}
                     </>
